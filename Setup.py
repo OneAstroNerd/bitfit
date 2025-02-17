@@ -8,7 +8,7 @@ class Setup(QWidget):
         self.initUI()  
 
     def initUI(self):  
-        self.setWindowTitle('راه اندازی')  
+        self.setWindowTitle('بیت‌فیت-راه اندازی')  
         self.setFixedSize(600, 500)  
 
         self.setWindowFlags(QtCore.Qt.Window | QtCore.Qt.WindowTitleHint | QtCore.Qt.WindowCloseButtonHint)  
@@ -100,8 +100,8 @@ class Setup(QWidget):
     def save_information(self):  
         try:  
             name = self.name_input.text()  
-            weight = float(self.weight_input.text())  
-            height = float(self.height_input.text())  
+            weight = float(self.weight_input.text())
+            height = float(self.height_input.text())
             age = int(self.age_input.text())  
             gender = self.gender_combo.currentText()  
             exercise = self.exercise_combo.currentText()  
@@ -109,7 +109,7 @@ class Setup(QWidget):
             QMessageBox.information(self, 'اطلاعات ذخیره شد',   
                                     f'نام: {name}, وزن: {weight}, قد: {height}, جنسیت: {gender}, سن: {age}, ورزش: {exercise}')  
         except ValueError:  
-            QMessageBox.warning(self, 'خطا', 'لطفا اطلاعات را به درستی وارد کنید.')  
+            QMessageBox.warning(self, 'خطا', 'لطفا اطلاعات را کامل وارد کنید.')  
 
 if __name__ == '__main__':  
     app = QApplication(sys.argv)  
