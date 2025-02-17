@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtWidgets import (QApplication, QWidget, QLabel, QVBoxLayout, QHBoxLayout, QPushButton, QMessageBox, QLineEdit, QComboBox)  
 from PyQt5 import QtCore  
 
-class Setup(QWidget):  
+class Setup(QWidget):
     def __init__(self):  
         super().__init__()  
         self.initUI()  
@@ -37,12 +37,12 @@ class Setup(QWidget):
         self.gender_combo.addItems(["مرد", "زن"])  
         self.gender_combo.setStyleSheet("""
             QComboBox {
-                border-radius: 10px;
+                border-radius: 5px;
                 padding: 5px;
                 background: white;
             }
             QComboBox::drop-down {
-                border-radius: 10px;
+                border-radius: 5px;
                 width: 25px;
                 background: #ddd;
                 border: 1px solid #ccc;
@@ -50,7 +50,7 @@ class Setup(QWidget):
             QComboBox::down-arrow {
                 width: 15px;
                 height: 15px;
-                border-radius: 7px;
+                border-radius: 5px;
                 background: #bbb;
             }
         """)  
@@ -60,20 +60,20 @@ class Setup(QWidget):
 
         exercise_layout = QHBoxLayout()
         self.exercise_combo = QComboBox(self)  
-        self.exercise_combo.addItems([  
-            "فوتبال", "والیبال", "بسکتبال", "ورزش کششی", "هوازی در خانه",   
+        self.exercise_combo.addItems([
+            "هیچ ورزشی", "فوتبال", "والیبال", "بسکتبال", "ورزش کششی", "هوازی در خانه",   
             "هوازی بیرون خانه", "کوه نوردی با شیب کم", "کوه نوردی با شیب زیاد",   
             "پیاده روی", "دویدن", "اسکیت", "پینگ پنگ",   
-            "تنیس", "کاراته", "تکواندو", "کنگ فو", "بوکس", "هیچ ورزشی انجام ندادم"  
+            "تنیس", "کاراته", "تکواندو", "کنگ فو", "بوکس"
         ])  
         self.exercise_combo.setStyleSheet("""
             QComboBox {
-                border-radius: 10px;
+                border-radius: 5px;
                 padding: 5px;
                 background: white;
             }
             QComboBox::drop-down {
-                border-radius: 10px;
+                border-radius: 5px;
                 width: 25px;
                 background: #ddd;
                 border: 1px solid #ccc;
@@ -81,7 +81,7 @@ class Setup(QWidget):
             QComboBox::down-arrow {
                 width: 15px;
                 height: 15px;
-                border-radius: 7px;
+                border-radius: 5px;
                 background: #bbb;
             }
         """)  
