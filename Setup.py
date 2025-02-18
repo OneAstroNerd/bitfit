@@ -1,5 +1,5 @@
 import sys  
-from PyQt5.QtWidgets import (QApplication, QWidget, QLabel, QVBoxLayout, QHBoxLayout, QPushButton, QMessageBox, QLineEdit, QComboBox)  
+from PyQt5.QtWidgets import (QApplication, QWidget, QLabel, QVBoxLayout, QHBoxLayout, QPushButton, QMessageBox, QLineEdit, QComboBox, QSpacerItem, QSizePolicy)  
 from PyQt5 import QtCore  
 
 class Setup(QWidget):
@@ -8,7 +8,7 @@ class Setup(QWidget):
         self.initUI()  
 
     def initUI(self):  
-        self.setWindowTitle('بیت‌فیت-راه اندازی')  
+        self.setWindowTitle('راه اندازی')  
         self.setFixedSize(600, 500)  
 
         self.setWindowFlags(QtCore.Qt.Window | QtCore.Qt.WindowTitleHint | QtCore.Qt.WindowCloseButtonHint)  
@@ -35,25 +35,6 @@ class Setup(QWidget):
         gender_layout = QHBoxLayout()
         self.gender_combo = QComboBox(self)  
         self.gender_combo.addItems(["مرد", "زن"])  
-        self.gender_combo.setStyleSheet("""
-            QComboBox {
-                border-radius: 5px;
-                padding: 5px;
-                background: white;
-            }
-            QComboBox::drop-down {
-                border-radius: 5px;
-                width: 25px;
-                background: #ddd;
-                border: 1px solid #ccc;
-            }
-            QComboBox::down-arrow {
-                width: 15px;
-                height: 15px;
-                border-radius: 5px;
-                background: #bbb;
-            }
-        """)  
         gender_layout.addWidget(self.gender_combo)
         gender_layout.addWidget(QLabel("جنسیت:"))
         layout.addLayout(gender_layout)
@@ -66,35 +47,21 @@ class Setup(QWidget):
             "پیاده روی", "دویدن", "اسکیت", "پینگ پنگ",   
             "تنیس", "کاراته", "تکواندو", "کنگ فو", "بوکس"
         ])  
-        self.exercise_combo.setStyleSheet("""
-            QComboBox {
-                border-radius: 5px;
-                padding: 5px;
-                background: white;
-            }
-            QComboBox::drop-down {
-                border-radius: 5px;
-                width: 25px;
-                background: #ddd;
-                border: 1px solid #ccc;
-            }
-            QComboBox::down-arrow {
-                width: 15px;
-                height: 15px;
-                border-radius: 5px;
-                background: #bbb;
-            }
-        """)  
         exercise_layout.addWidget(self.exercise_combo)
         exercise_layout.addWidget(QLabel("ورزش انجام شده:"))
         layout.addLayout(exercise_layout)
 
+        button_layout = QHBoxLayout()
+        button_layout.addSpacerItem(QSpacerItem(340, 20, QSizePolicy.Minimum, QSizePolicy.Minimum))
+        
         self.submit_info_button = QPushButton('تایید', self)  
-        self.submit_info_button.setStyleSheet("border-radius: 5px; padding: 5px; background-color: #4CAF50; color: white;")  
-        self.submit_info_button.setCheckable(True)  
+        self.submit_info_button.setStyleSheet("border-radius: 5px; padding: 2px; background-color: #4CAF50; color: white;")  
+        self.submit_info_button.setFixedWidth(100)
+        self.submit_info_button.setFixedHeight(25)
         self.submit_info_button.clicked.connect(self.save_information)  
-        layout.addWidget(self.submit_info_button)  
-
+        
+        button_layout.addWidget(self.submit_info_button)
+        layout.addLayout(button_layout)
         self.setLayout(layout)  
 
     def save_information(self):  
