@@ -52,15 +52,16 @@ class Setup(QWidget):
         layout.addLayout(exercise_layout)
 
         button_layout = QHBoxLayout()
-        button_layout.addSpacerItem(QSpacerItem(340, 20, QSizePolicy.Minimum, QSizePolicy.Minimum))
+        button_layout.addSpacerItem(QSpacerItem(0, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
         
         self.submit_info_button = QPushButton('تایید', self)  
         self.submit_info_button.setStyleSheet("border-radius: 5px; padding: 2px; background-color: #4CAF50; color: white;")  
-        self.submit_info_button.setFixedWidth(100)
+        self.submit_info_button.setFixedWidth(80)
         self.submit_info_button.setFixedHeight(25)
         self.submit_info_button.clicked.connect(self.save_information)  
         
         button_layout.addWidget(self.submit_info_button)
+        button_layout.addSpacerItem(QSpacerItem(400, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
         layout.addLayout(button_layout)
         self.setLayout(layout)  
 
